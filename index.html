@@ -7,16 +7,10 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
-	<link rel="stylesheet" type="text/css" href="css/owl.transitions.css"/>
-	<link rel="stylesheet" type="text/css" href="css/owl.carousel.css"/>
-	<link rel="stylesheet" type="text/css" href="css/animate.css"/>
 	<link rel="stylesheet" type="text/css" href="css/main.css"/>
-
-
-
 </head>
 <body>
+
 	<!--  Header Section  -->
 	<header>
 		<div class="container">
@@ -109,7 +103,7 @@
 			<div class="row">
 				<div class="col-md-6 text-center animated wow fadeInLeft">
 					<div class="iphone">
-						<img src="img/iphone.png" alt="" title="">
+						<img src="img/iphone.png" alt="" titl="">
 					</div>
 				</div>
 				<div class="col-md-6 animated wow fadeInRight">
@@ -253,8 +247,8 @@
 	<!--  Email Subscription Section  -->
 	<section class="sub_box">
 		<p class="cta_text animated wow fadeInDown">We're hiring. Join Our company!</p>
-		<form action="#" method="post" class="animated wow fadeIn" data-wow-duration="2s" id="submit_form">
-			<label for="mc-email"></label><input type="email" id="mc-email" placeholder="Enter your email"/>
+		<form action="#" metohd="post" class="animated wow fadeIn" data-wow-duration="2s" id="submit_form">
+			<input type="email" id="mc-email" placeholder="Enter your email"/>
 			<button type="submit" id="mc_submit">
 				<i class="icon"></i>
 			</button>
@@ -285,15 +279,27 @@
 		<p class="copyright animated wow fadeIn" data-wow-duration="2s"> <strong>Pixelhint</strong>
 	</footer>
 	<!--  End Footer Section  -->
+	<script>
+		const loadStyleSheet = (src) =>{
+			if (document.createStyleSheet) {
+				document.createStyleSheet(src);
+			}
+			else {
+				const stylesheet = document.createElement('link');
+				stylesheet.href = src;
+				stylesheet.rel = 'stylesheet';
+				stylesheet.type = 'text/css';
+				document.getElementsByTagName('head')[0].appendChild(stylesheet);
+			}
+		}
+		// All of the objects are in the DOM, and all the images, scripts, links have finished loading.
+		window.onload = function () {
+			console.log('window done!')
+			loadStyleSheet('./css/bundle.css');
+		};
+	</script>
+	<script async type="text/javascript" src="js/main.js"></script>
 
-	<script type="text/javascript" src="js/main.js"></script>
-
-	<script async type="text/javascript" src="js/jquery.js"></script>
-	<script async type="text/javascript" src="js/ajaxchimp.js"></script>
-	<script async type="text/javascript" src="js/owl.carousel.min.js"></script>
-	<script async type="text/javascript" src="js/wow.js"></script>
-	<script async type="text/javascript" src="js/parallax.js"></script>
-	<script async type="text/javascript" src="js/nicescroll.js"></script>
-	<script async type="text/javascript" src="js/scrollTo.js"></script>
+	<script defer type="text/javascript" src="js/bundle.js"></script>
 </body>
 </html>
